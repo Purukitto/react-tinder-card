@@ -111,14 +111,14 @@ const rotationString = (rot) => {
 
 const getTranslate = (element) => {
   const style = window.getComputedStyle(element)
-  const matrix = new WebKitCSSMatrix(style.webkitTransform)
+  const matrix = new WebKitCSSMatrix(style.transform)
   const ans = { x: matrix.m41, y: -matrix.m42 }
   return ans
 }
 
 const getRotation = (element) => {
   const style = window.getComputedStyle(element)
-  const matrix = new WebKitCSSMatrix(style.webkitTransform)
+  const matrix = new WebKitCSSMatrix(style.transform)
   const ans = -Math.asin(matrix.m21) / (2 * Math.PI) * 360
   return ans
 }
